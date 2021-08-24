@@ -18,8 +18,11 @@ const App = () => {
       </section>
       <h2> Users:</h2>
       <ul>
-        {users.map(({ id, login }) => (
+        {users.map(({ id, login,avatar_url }) => (
+          <div>
+          <img src={avatar_url}></img>
           <li key={id}>Name: {login}</li>
+          </div>
         ))}
       </ul>
     </div>
