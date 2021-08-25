@@ -1,32 +1,59 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  background-image: linear-gradient(to right, #ece1e1fa, #8a6837e5);
 }
-body {
-  background-color: rgb(236, 185, 16);
+
+header {
+  max-width: 10000px;
+  height: 100px;
+  background-image: linear-gradient(to right, #0a0a0afa, #252320e5);
 }
-section {
-  background-color: rgb(54, 243, 54);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+header h1 {
+  color: antiquewhite;
 }
-h1 {
-  display: flex;
-  background-color: rgb(250, 125, 9);
-  width: 100px;
-  padding: 15px;
-  margin: 15px;
-}
+
 button {
-  background-color: rgb(230, 116, 9);
-  padding: 5px;
-  margin: 5px;
-  width: 100px;
-  border-radius: 20px;
-  box-shadow: black;
+  align-items: center;
+  padding: 6px 20px;
+  border: 2px solid rgb(207, 138, 9);
+  background-color: rgb(161, 5, 5);
+  color: rgb(212, 228, 121);
+  margin: 17px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 553px;
 }
-div :hover button {
-  background-color: rgb(67, 151, 151);
+
+.App:hover button {
   width: 150px;
+  transition: 0.5s;
+}
+.App-data {
+  width: 100px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+.App-data img {
+  align-items: center;
+  width: 150px;
+  border-radius: 50px;
+  border: 5px solid rgb(209, 140, 12);
+  margin: 20px;
+  padding: 15px;
+  background: rgb(20, 16, 16);
+}
+.detail {
+  border: 20px solid rgb(24, 21, 14);
+  margin: 20px;
+}
+:hover .detail {
+  background: rgb(209, 140, 12);
+  border: 20px solid rgb(230, 186, 85);
+}
+:hover img {
+  background: rgb(209, 140, 12);
 }
