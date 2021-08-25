@@ -1,32 +1,43 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-const App = () => {
+function App() {
   const [users, setUsers] = useState([]);
   const loadUsers = async () => {
-    //console.log("before");
-    const response = await fetch("https://api.github.com/users");
-    const jsonresponse = await response.json();
-    setUsers(jsonresponse);
+    const response = await fetch("https://reqres.in/api/users?page=1");
+    const jsonResponse = await response.json();
+    setUsers(jsonResponse.data);
   };
 
   return (
-    <div className="App">
-      <section>
-        <h1>Go On Trip</h1>
-        <button onClick={loadUsers}> Get Data </button>
-      </section>
-      <h2> Users:</h2>
-      <ul>
-        {users.map(({ id, login,avatar_url }) => (
-          <div>
-          <img src={avatar_url}></img>
-          <li key={id}>Name: {login}</li>
-          </div>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className="App">
+        <header className="App-header">
+          <h1>Lets Grow More</h1>
+        </header>
+
+        <button onClick={loadUsers} className="App-button">
+          {" "}
+          <b>Get data</b>
+        </button>
+
+        <div className="App-data">
+          {users.map(({ id, email, first_name, last_name, avatar }) => (
+            <span key={id} className="App-list">
+              <img src={avatar} className="App-user" alt="user"></img>
+              <br />
+              <br />
+              <div className="detail">
+                {first_name} {last_name}
+              </div>
+              <br></br>
+              {email}
+            </span>
+          ))}
+        </div>
+      </div>
+    </>
   );
-};
+}
 
 export default App;
